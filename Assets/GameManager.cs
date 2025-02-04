@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
-    [SerializeField] GameState _nowgameState;
-    GameState _beforegameState;
+    [SerializeField] GameState _nowgameState = GameState.Title;
+    GameState _beforegameState = GameState.Not;
     float _time = 0;
     [SerializeField] int _mineNum = 10;
 
@@ -28,20 +28,20 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
         switch (_nowgameState)
         {
             case GameState.Title:
-                AudioManager.Instance.PlayBGM(AudioManager.BgmSoundData.BGM.Title);
+                if (OneState()) { AudioManager.Instance.PlayBGM(AudioManager.BgmSoundData.BGM.Title); }
                 break;
 
             case GameState.Game:
                 TimeUp();
-                AudioManager.Instance.PlayBGM(AudioManager.BgmSoundData.BGM.Game);
+                if (OneState()) { AudioManager.Instance.PlayBGM(AudioManager.BgmSoundData.BGM.Game); }
                 break;
 
             case GameState.GameOver:
-                AudioManager.Instance.PlayBGM(AudioManager.BgmSoundData.BGM.GameOver);
+                if (OneState()) { AudioManager.Instance.PlayBGM(AudioManager.BgmSoundData.BGM.GameOver); }
                 break;
 
             case GameState.GameClear:
-                AudioManager.Instance.PlayBGM(AudioManager.BgmSoundData.BGM.Clear);
+                if (OneState()) { AudioManager.Instance.PlayBGM(AudioManager.BgmSoundData.BGM.Clear); }
                 break;
         }
     }
@@ -55,7 +55,17 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     {
         _time += Time.deltaTime;
     }
-
+    bool OneState()
+    {
+        if (_beforegameState != _nowgameState)
+        {
+            _beforegameState = _nowgameState;
+            Debug.Log(true);
+            return true;
+        }
+        Debug.Log(false);
+        return false;
+    }
     public void GameStateChenge(GameState state)
     {
         _beforegameState = _nowgameState;
@@ -69,6 +79,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 }
 public enum GameState
 {
+    Not,
     Title,
     Game,
     GameOver,

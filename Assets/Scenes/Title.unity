@@ -631,7 +631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1237269668608638697, guid: 2db8b65e6c5dfe3448f194d54f19a7e1, type: 3}
       propertyPath: _bgmSoundDatas.Array.data[3]._volume
-      value: 1
+      value: 0.56
       objectReference: {fileID: 0}
     - target: {fileID: 1237269668608638697, guid: 2db8b65e6c5dfe3448f194d54f19a7e1, type: 3}
       propertyPath: _seSoundDatas.Array.data[0].AudioClip
@@ -645,6 +645,22 @@ PrefabInstance:
       propertyPath: _seSoundDatas.Array.data[2].AudioClip
       value: 
       objectReference: {fileID: 8300000, guid: 327cc19706a7e0c4084d95670ac32ae6, type: 3}
+    - target: {fileID: 1237269668608638697, guid: 2db8b65e6c5dfe3448f194d54f19a7e1, type: 3}
+      propertyPath: _bgmSoundDatas.Array.data[0]._audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8ed827ed38b69354f813f6c2f4d63d7f, type: 3}
+    - target: {fileID: 1237269668608638697, guid: 2db8b65e6c5dfe3448f194d54f19a7e1, type: 3}
+      propertyPath: _bgmSoundDatas.Array.data[1]._audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a6c2cf0abdc04b84a9ab86074c906442, type: 3}
+    - target: {fileID: 1237269668608638697, guid: 2db8b65e6c5dfe3448f194d54f19a7e1, type: 3}
+      propertyPath: _bgmSoundDatas.Array.data[2]._audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 94a4af63084213448be13ef87d4f89f8, type: 3}
+    - target: {fileID: 1237269668608638697, guid: 2db8b65e6c5dfe3448f194d54f19a7e1, type: 3}
+      propertyPath: _bgmSoundDatas.Array.data[3]._audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 01773b6bedec4cf40ba269d0a7a4f78a, type: 3}
     - target: {fileID: 2531679777134012157, guid: 2db8b65e6c5dfe3448f194d54f19a7e1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -802,7 +818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51a284846ad860d489ea2ad19f3b5de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nowgameState: 0
+  _nowgameState: 1
   _mineNum: 10
 --- !u!4 &525956292
 Transform:
